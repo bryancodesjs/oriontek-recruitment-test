@@ -1,27 +1,13 @@
 # OriontekRecruitmentTest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.11.
+This is a recruitment test for Oriontek.
 
-## Development server
+## Project requirements as detailed by recruiter
+Se desea tener el control de todos los clientes pertenecientes a la empresa X, donde cada cliente puede tener N cantidad de direcciones. Con sus conocimientos de desarrollo se solicita crear una solución informática para este problema.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+La solución debe de ser entregada en un repositorio GIT público.
 
-## Code scaffolding
+Según la solución del mismo, será evaluado. Esto quiere decir, que su solución debe estar enfocada a Mobile, Backend, frontend o Full stack acorde a lo que desee aplicar.  
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## My Solution
+I'm using `Angular 12` and `Bootstrap 5` for this project, and focusing on Front-end.
