@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+//typography
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,700&display=swap');
+//font sizes (generated using typescale rules
+h1 {font-size: 3.81rem !important;}
+h2 {font-size: 3.052rem !important;}
+h3 {font-size: 2.441rem !important;}
+h4 {font-size: 1.953rem !important;}
+h5 {font-size: 1.562rem !important;}
+h6 {font-size: 1.250rem !important;}
+label {font-size: 0.800rem !important;}
+small {font-size: 0.640rem !important;}
+
+body, html {
+    font-family: Ubuntu !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 16px !important;
+}
