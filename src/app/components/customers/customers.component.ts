@@ -43,6 +43,7 @@ export class CustomersComponent implements OnInit {
   //notification states
   updateNotification = false;
   newRecordNotification = false;
+  deletedNotification = false;
 
   constructor(private _Service: CustomersService) { }
 
@@ -156,6 +157,7 @@ export class CustomersComponent implements OnInit {
   //delete the customer record whose key is being passed to the function
   deleteRecord(key: any) {
     this._Service.delete(key);
+    this.showDeletedNotification();
   }
 
   //let's add an additional address
@@ -187,6 +189,14 @@ export class CustomersComponent implements OnInit {
     this.newRecordNotification = true;
     setTimeout(() => {
       this.newRecordNotification = false;
+    }, 3000
+    );
+  }
+  //show a delete notification
+  showDeletedNotification() {
+    this.deletedNotification = true;
+    setTimeout(() => {
+      this.deletedNotification = false;
     }, 3000
     );
   }

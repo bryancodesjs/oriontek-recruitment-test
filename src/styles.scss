@@ -91,6 +91,9 @@ hr {
                     }
                 }
             }
+            &.disabled {
+                cursor: not-allowed !important;
+            }
         }
     }
 }
@@ -156,9 +159,21 @@ tr:hover {
     &.success {
         background-color: #d0ecdb;
         border-left: 3px solid #a8e2ae;
-        color: green;
+        h6 {
+            color: green !important;
+        }
+    }
+    &.delete {
+        background-color: #ecd0d0;
+        border-left: 3px solid #e2a8a8;
+        h6 {
+            color: #790000 !important;
+        }
     }
     i {
         margin-right: 0.440rem;
     }
+}
+.disabled {
+    cursor: not-allowed !important;
 }

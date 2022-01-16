@@ -109,3 +109,9 @@
         <h6 class="mb-0 d-flex align-items-center"><i class="ri-checkbox-circle-fill"></i>The new record has been saved successfully!</h6>
     </div>
 </div>
+<!-- notification for deleted record-->
+<div class="notification delete animate__animated animate__fadeInUp" *ngIf="deletedNotification">
+    <div class="p-3">
+        <h6 class="mb-0 d-flex align-items-center"><i class="ri-checkbox-circle-fill"></i>The record has been deleted</h6>
+    </div>
+</div>
