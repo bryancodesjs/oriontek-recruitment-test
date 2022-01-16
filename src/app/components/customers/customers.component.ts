@@ -25,7 +25,7 @@ export class CustomersComponent implements OnInit {
   newName = '';
   newPhone = 0;
   newAddress = '';
-  newAddresses:any = {};
+  newAddresses:any = [];
 
   constructor(private _Service: CustomersService) { }
 
@@ -95,6 +95,7 @@ export class CustomersComponent implements OnInit {
     this.newAddress = '';
     this.newCustomer.addresses = [''];
   }
+
   //save new customer
   save() {
     //if there's no address for this customer
@@ -116,6 +117,11 @@ export class CustomersComponent implements OnInit {
       //push the record to firebase
       this._Service.addNewCustomer(this.newCustomer); 
     }
+  }
+
+  //delete the customer whose key is being passed to the function
+  deleteRecord(key: any) {
+    this._Service.delete(key);
   }
 
 }

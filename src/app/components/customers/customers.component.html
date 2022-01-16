@@ -20,11 +20,16 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let customer of Customer">
+        <tr *ngFor="let customer of Customer; index as i">
             <td>{{customer.name}}</td>
             <td>{{customer.phone}}</td>
-            <td>{{customer.addresses}}</td>
-            <td>delete</td>
+            <!-- <td>{{customer.addresses}}</td> -->
+            <td>
+                <ul>
+                    <li *ngFor="let cust of customer.addresses">{{cust}}</li>
+                </ul>
+            </td>
+            <td><button (click)="deleteRecord(customer.key)">Delete</button></td>
         </tr>
     </tbody>
 </table>
