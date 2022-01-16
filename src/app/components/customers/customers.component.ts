@@ -42,6 +42,7 @@ export class CustomersComponent implements OnInit {
 
   //notification states
   updateNotification = false;
+  newRecordNotification = false;
 
   constructor(private _Service: CustomersService) { }
 
@@ -133,18 +134,22 @@ export class CustomersComponent implements OnInit {
       this.newCustomer.addresses.shift();
       //append the new address to the address object
       this.newCustomer.addresses.push(this.newAddress);
-      //give me some feedback on the console
-      //console.log(this.newCustomer);
       //push the record to Firebase
       this._Service.addNewCustomer(this.newCustomer);
+      //close the modal
+      this.toggleModal();
+      //show a proper notification
+      this.showSuccessSaved();
     } else { 
       //if I already added an address to the new customer in memory
       //push this address to the addresses array
       this.newCustomer.addresses.push(this.newAddress); 
-      //give me feedback
-      //console.log(this.newCustomer); 
       //push the record to firebase
       this._Service.addNewCustomer(this.newCustomer); 
+      //close the modal
+      this.toggleModal();
+      //show a proper notification
+      this.showSuccessSaved();
     }
   }
 
@@ -169,12 +174,19 @@ export class CustomersComponent implements OnInit {
     //show a 'success' notification
     this.showSuccess();
   }
-  //show a success notification
+  //show a success notification once a record has been updated
   showSuccess() {
     this.updateNotification = true;
-    console.log('Record has been saved');
     setTimeout(() => {
       this.updateNotification = false;
+    }, 3000
+    );
+  }
+  //show a success notification once a new record has been saved
+  showSuccessSaved() {
+    this.newRecordNotification = true;
+    setTimeout(() => {
+      this.newRecordNotification = false;
     }, 3000
     );
   }

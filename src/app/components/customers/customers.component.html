@@ -22,15 +22,15 @@
     <tbody>
         <tr *ngFor="let customer of Customer; index as i">
             <td (click)="viewCustomer(customer.name, customer.key, customer.phone, customer.addresses)">{{customer.name}}</td>
-            <td>{{customer.phone}}</td>
+            <td (click)="viewCustomer(customer.name, customer.key, customer.phone, customer.addresses)">{{customer.phone}}</td>
             <!-- <td>{{customer.addresses}}</td> -->
-            <td>
+            <td (click)="viewCustomer(customer.name, customer.key, customer.phone, customer.addresses)">
                 <ul>
                     <li *ngFor="let cust of customer.addresses">{{cust}}</li>
                 </ul>
             </td>
             <td>
-                <button (click)="deleteRecord(customer.key)" class="btn btn-small btn-transparent">Delete</button>
+                <button (click)="deleteRecord(customer.key)" class="btn btn-small btn-outline-danger">Delete</button>
             </td>
         </tr>
     </tbody>
@@ -100,6 +100,12 @@
 <!-- notification for successful record update-->
 <div class="notification success animate__animated animate__fadeInUp" *ngIf="updateNotification">
     <div class="p-3">
-        <h6>The record has been successfully updated</h6>
+        <h6>The record has been successfully updated!</h6>
+    </div>
+</div>
+<!-- notification for successful new record-->
+<div class="notification success animate__animated animate__fadeInUp" *ngIf="newRecordNotification">
+    <div class="p-3">
+        <h6 class="mb-0 d-flex align-items-center"><i class="ri-checkbox-circle-fill"></i>The new record has been saved successfully!</h6>
     </div>
 </div>
