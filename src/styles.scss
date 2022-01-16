@@ -10,9 +10,117 @@ h6 {font-size: 1.250rem !important;}
 label {font-size: 0.800rem !important;}
 small {font-size: 0.640rem !important;}
 
+//color variables
+$primary-color: #4169FA;
+$primary-color_hover: #6386FF;
+$secondary-color: #F0F0F9;
+$secondary-color_hover: #DEE8FB;
+$body-text_color: #909090;
+$body-title_color: #444444;
+$focus-background_color: #fff;
+$non-focus-background_color: #f6f8f9;
+$standard-shadow: -5px 1px 20px -10px rgba(0, 0, 0, 0.25);
+$transition-speed-1: 0.2s ease;
 body, html {
     font-family: Ubuntu !important;
     margin: 0 !important;
     padding: 0 !important;
     font-size: 16px !important;
+    p {
+        color: $body-text_color !important;
+    }
+    height: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: $body-title_color !important;
+}
+.header {
+    border-bottom: 1px solid #ECEEF1;
+}
+hr {
+    background-color: #ECEEF1 !important;
+    opacity: 1 !important;
+}
+.side-navbar {
+    &-list {
+        list-style: none;
+        padding: 0;
+        li {
+            padding-left: 1rem;
+        }
+        &_button {
+            background-color: $non-focus-background_color;
+            border: none;
+            padding: 1rem 1.250rem 1rem 2rem;
+            border-radius: 10px 0px 0px 10px;
+            font-weight: 400 !important;
+            color: $body-title_color;
+            display: flex;
+            align-items: center;
+            transition: $transition-speed-1;
+            &:hover {
+                background-color: darken($non-focus-background_color, 5%);
+                transition: $transition-speed-1;
+            }
+            &_icon {
+                margin-right: 1rem;
+                color: $body-text_color;
+                font-size: 1.250rem;
+            }
+            &.active {
+                background-color: $focus-background_color;
+                box-shadow: $standard-shadow;
+                z-index: 4;
+                .side-navbar-list_button_icon {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}
+.render-section {
+    box-shadow: $standard-shadow;
+    z-index: 3;
+}
+.general-container {
+    display: flex;
+    flex-flow: column;
+    //This makes the general row occupy all remaining vertical space
+    .general-row {
+        flex: 1;
+    }
+}
+//backgrounds 
+.focus-bg {
+    background-color: $focus-background_color;
+}
+.non-focus-bg {
+    background-color: $non-focus-background_color;
+}
+//buttons 
+.btn {
+    padding: 0.640rem 1.250rem !important;
+    border-radius: 10px !important;
+    transition: $transition-speed-1;
+}
+.action-btn {
+    background-color: $primary-color !important;
+    color: white !important;
+    font-weight: 500 !important;
+    &:hover {
+        background-color: $primary-color_hover !important;
+        transition: $transition-speed-1;
+    }
+}
+.secondary-btn {
+    background-color: $secondary-color !important;
+    color: $body-title_color !important;
+    font-weight: 500 !important;
+    &:hover {
+        background-color: $secondary-color_hover !important;
+        transition: $transition-speed-1;
+    }
+}
+tr:hover {
+    cursor: pointer;
 }

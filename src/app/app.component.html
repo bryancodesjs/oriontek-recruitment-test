@@ -1,13 +1,58 @@
-<div class="container-fluid">
-  <div class="header d-flex justify-content-between p-3">
-    <div class="brand">
-      <h5>CRM</h5>
-    </div>
-    <div class="btn-group">
-      <button class="btn secondary--btn">
-        Bryan Campos
-      </button>
+<div class="container-fluid h-100 general-container">
+  <!-- header row -->
+  <div class="row header-row">
+    <div class="header d-flex justify-content-between p-3">
+      <div class="brand d-flex align-items-center">
+        <h5 class="mb-0">CRM</h5>
+      </div>
+      <div class="btn-group">
+        <button class="btn secondary-btn">
+          Bryan Campos
+        </button>
+      </div>
     </div>
   </div>
-  <hr>
+  <!-- general row-->
+  <div class="row general-row">
+      <div class="col-lg-3 p-0">
+        <div class="side-navbar non-focus-bg h-100">
+          <div class="side-navbar_welcomemsj p-3 pt-4">
+            <h5 class="mb-0">Hello, admin</h5>
+            <p>Lorem ipsum dolor sit.</p>
+          </div>
+          <ul class="side-navbar-list">
+            <li class="d-flex">
+              <button class="w-100 side-navbar-list_button active">
+                <span class="side-navbar-list_button_icon"><i class="ri-folder-user-fill"></i></span>
+                <span class="side-navbar-list_button_text">Customers</span>
+              </button>
+            </li>
+            <li class="d-flex">
+              <button class="w-100 side-navbar-list_button">
+                <span class="side-navbar-list_button_icon"><i class="ri-list-check-2"></i></span>
+                <span class="side-navbar-list_button_text">Plans</span>
+              </button>
+            </li>
+            <li class="d-flex">
+              <button class="w-100 side-navbar-list_button">
+                <span class="side-navbar-list_button_icon"><i class="ri-mail-fill"></i></span>
+                <span class="side-navbar-list_button_text">Inbox</span>
+              </button>
+            </li>
+            <li class="d-flex">
+              <button class="w-100 side-navbar-list_button">
+                <span class="side-navbar-list_button_icon"><i class="ri-settings-3-fill"></i></span>
+                <span class="side-navbar-list_button_text">Settings</span>
+              </button>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    <div class="col-lg-9 render-section focus-bg">
+      <section class="p-5 ">
+        <router-outlet></router-outlet>
+      </section>
+    </div>
+  </div>
 </div>

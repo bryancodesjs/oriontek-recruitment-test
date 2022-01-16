@@ -1,1 +1,30 @@
-<p>customers works!</p>
+<section class="d-flex justify-content-between align-items-start">
+    <div>
+        <h4 class="text-capitalize">{{title}}</h4>
+        <p>34 customers in record</p>
+    </div>
+
+    <button class="btn action-btn">
+        New Customer +
+    </button>
+</section>
+
+
+<table class="table table-borderless table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Service Locations</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let customer of customers">
+            <td>{{customer.name}}</td>
+            <td>{{customer.phone}}</td>
+            <td>{{customer.addresses.length}}</td>
+            <td>delete</td>
+        </tr>
+    </tbody>
+</table>
