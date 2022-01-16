@@ -61,18 +61,34 @@ hr {
             &:hover {
                 background-color: darken($non-focus-background_color, 5%);
                 transition: $transition-speed-1;
+                .side-navbar-list_button {
+                    &_icon,&_text {
+                        transform: translateX(10px);
+                        transition: 0.2s ease;
+                    }
+                }
             }
             &_icon {
                 margin-right: 1rem;
                 color: $body-text_color;
                 font-size: 1.250rem;
+                transition: 0.4s ease;
+            }
+            &_text {
+                transition: 0.4s ease;
             }
             &.active {
                 background-color: $focus-background_color;
                 box-shadow: $standard-shadow;
-                z-index: 4;
+                z-index: 3;
                 .side-navbar-list_button_icon {
                     color: $primary-color;
+                }
+                .side-navbar-list_button {
+                    &_icon,&_text {
+                        transform: translateX(10px);
+                        transition: 0.2s ease;
+                    }
                 }
             }
         }
@@ -99,7 +115,7 @@ hr {
 }
 //buttons 
 .btn {
-    padding: 0.640rem 1.250rem !important;
+    padding: 0.440rem 1.250rem !important;
     border-radius: 10px !important;
     transition: $transition-speed-1;
 }

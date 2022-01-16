@@ -1,10 +1,10 @@
 <section class="d-flex justify-content-between align-items-start">
     <div>
         <h4 class="text-capitalize">{{title}}</h4>
-        <p>34 customers in record</p>
+        <p>{{customerAmount}} customers in record</p>
     </div>
 
-    <button class="btn action-btn">
+    <button (click)="toggleModal()" class="btn action-btn">
         New Customer +
     </button>
 </section>
@@ -13,18 +13,49 @@
 <table class="table table-borderless table-hover">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Phone</th>
-            <th>Service Locations</th>
+            <th><i class="ri-user-6-fill"></i>Name</th>
+            <th><i class="ri-phone-fill"></i>Phone</th>
+            <th><i class="ri-map-pin-2-fill"></i>Service Locations</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let customer of customers">
+        <tr *ngFor="let customer of Customer">
             <td>{{customer.name}}</td>
             <td>{{customer.phone}}</td>
-            <td>{{customer.addresses.length}}</td>
+            <td>{{customer.addresses}}</td>
             <td>delete</td>
         </tr>
     </tbody>
 </table>
+
+<!-- Modal -->
+<div class="modal fade show d-block" id="mainModal" tabindex="-1" aria-labelledby="mainModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="mainModalLabel">New Customer</h5>
+          <button (click)="toggleModal()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- set of inputs-->
+          <div class="form-group mb-3">
+              <div class="label">Name</div>
+              <input [(ngModel)]="newCustomer.name" type="text" class="form-control" placeholder="name">
+          </div>
+          <div class="form-group mb-3">
+              <div class="label">Phone</div>
+              <input [(ngModel)]="newCustomer.phone" type="number" class="form-control" placeholder="phone number">
+          </div>
+          <div class="form-group mb-3">
+              <div class="label">Address</div>
+              <input [(ngModel)]="newAddress" type="text" class="form-control" placeholder="address">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn secondary-btn" data-bs-dismiss="modal">Discard</button>
+          <button (click)="save()" type="button" class="btn action-btn">Submit</button>
+        </div>
+      </div>
+    </div>
+</div>
