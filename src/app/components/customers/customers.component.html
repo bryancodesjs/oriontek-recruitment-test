@@ -4,7 +4,7 @@
         <p>{{customerAmount}} customers in record</p>
     </div>
 
-    <button (click)="toggleModal()" class="btn action-btn">
+    <button (click)="customerForm()" class="btn action-btn">
         New Customer +
     </button>
 </section>
@@ -21,7 +21,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let customer of Customer; index as i">
-            <td>{{customer.name}}</td>
+            <td (click)="viewCustomer(customer.name, customer.key, customer.phone, customer.addresses)">{{customer.name}}</td>
             <td>{{customer.phone}}</td>
             <!-- <td>{{customer.addresses}}</td> -->
             <td>
@@ -37,30 +37,47 @@
 </table>
 
 <!-- Modal -->
-<div class="modal fade show d-block" id="mainModal" tabindex="-1" aria-labelledby="mainModal" aria-hidden="true">
+<div class="modal fade" id="mainModal" tabindex="-1" aria-labelledby="mainModal" aria-hidden="true">
     <div class="modal-dialog animate__animated animate__fadeIn">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="mainModalLabel">New Customer</h5>
+          <h5 class="modal-title" id="mainModalLabel" *ngIf="userIsAddingRecord">New Customer</h5>
+          <h5 class="modal-title" id="mainModalLabel" *ngIf="userIsViewingRecord">{{viewingCustomer.name}}</h5>
           <button (click)="toggleModal()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <!-- set of inputs-->
-          <div class="form-group mb-3">
-              <div class="label">Name</div>
-              <input [(ngModel)]="newCustomer.name" type="text" class="form-control" placeholder="name">
-          </div>
-          <div class="form-group mb-3">
-              <div class="label">Phone</div>
-              <input [(ngModel)]="newCustomer.phone" type="number" class="form-control" placeholder="phone number">
-          </div>
-          <div class="form-group mb-3">
-              <div class="label">Address</div>
-              <input [(ngModel)]="newAddress" type="text" class="form-control" placeholder="address">
-          </div>
+            <!-- if the user is adding a new record, show this form-->
+            <div *ngIf="userIsAddingRecord">
+                <!-- set of inputs-->
+                <div class="form-group mb-3">
+                    <label class="label">Name</label>
+                    <input [(ngModel)]="newCustomer.name" type="text" class="form-control" placeholder="name">
+                </div>
+                <div class="form-group mb-3">
+                    <label class="label">Phone</label>
+                    <input [(ngModel)]="newCustomer.phone" type="number" class="form-control" placeholder="phone number">
+                </div>
+                <div class="form-group mb-3">
+                    <label class="label">Address</label>
+                    <input [(ngModel)]="newAddress" type="text" class="form-control" placeholder="address">
+                </div>
+            </div>
+            <!-- if the user is viewing an existing record -->
+            <div *ngIf="userIsViewingRecord" >
+                <div>
+                    <label for="">Phone</label>
+                    <p>{{viewingCustomer.phone}}</p>
+                </div>
+                <div>
+                    <label for="">Service Locations</label>
+                    <ul>
+                        <li *ngFor="let a of viewingCustomer.addresses">{{a}}</li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn secondary-btn" data-bs-dismiss="modal">Discard</button>
+          <button (click)="toggleModal()" type="button" class="btn secondary-btn" data-bs-dismiss="modal">Discard</button>
           <button (click)="save()" type="button" class="btn action-btn">Submit</button>
         </div>
       </div>

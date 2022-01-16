@@ -22,10 +22,23 @@ export class CustomersComponent implements OnInit {
     phone: 0,
     addresses: ['']
   }
+  //create a blank customer array in memory 
+  viewingCustomer = {
+    key: '',
+    name: '',
+    phone: 0,
+    addresses: ['']
+  }
   //variable to store a single address temporarily
   newAddress = '';
   //variable to store the amount of records being retrieved from Firebase
   customerAmount = 0;
+
+  //state variables to control what will be shown on the modal
+  userIsAddingRecord = false; //the user is adding a new record
+  userIsViewingRecord = false; //the user is viewing a record
+  userIsDeletingRecord = false; //the user is deleting a record
+  userIsAddingAddress = false; //the user is adding an additional address to a record
 
   constructor(private _Service: CustomersService) { }
 
@@ -59,7 +72,11 @@ export class CustomersComponent implements OnInit {
       (document.getElementById('mainModal')as HTMLElement).className = "modal fade show d-block";
       //in case the modal is already showing then...
     } else {
-      //hide it
+      //reset all modal states to false
+      this.resetStates();
+      //reset all data in the viewingCustomer object
+      this.clearViewingCustomer();
+      //hide the modal
       (document.getElementById('mainModal')as HTMLElement).className = "modal fade";
     }
   }
@@ -71,7 +88,40 @@ export class CustomersComponent implements OnInit {
     this.newAddress = '';
     this.newCustomer.addresses = [''];
   }
-
+  //let's show the modal to add a new customer
+  customerForm() {
+    this.userIsAddingRecord = true;
+    this.toggleModal();
+  }
+  //let's show the modal rendering the details of a user
+  viewCustomer(name:any, key:any, phone:any, addresses:Array<any>) {
+    //console.log(name + phone + key + addresses);
+    //assign the values of the selected item to the virtual 'viewingCustomer' object
+    this.viewingCustomer.name = name;
+    this.viewingCustomer.key = key;
+    this.viewingCustomer.phone = phone;
+    for (let i = 0; i < addresses.length; i++) {
+      this.viewingCustomer.addresses[i] = addresses[i];
+    }
+    //show me the result
+    console.log(this.viewingCustomer);
+    this.toggleModal();
+    this.userIsViewingRecord = true;
+  }
+  //reset all modal states to false;
+  resetStates() {
+    this.userIsAddingRecord = false; 
+    this.userIsViewingRecord = false; 
+    this.userIsDeletingRecord = false; 
+    this.userIsAddingAddress = false; 
+  }
+  //clears all data in the viewingCustomer object
+  clearViewingCustomer() {
+    this.viewingCustomer.key = '';
+    this.viewingCustomer.name = '';
+    this.viewingCustomer.phone = 0;
+    this.viewingCustomer.addresses = ['']
+  }
   //save new customer
   save() {
     //if there's no address for this customer
