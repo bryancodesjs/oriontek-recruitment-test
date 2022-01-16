@@ -40,12 +40,15 @@ export class CustomersComponent implements OnInit {
   userIsDeletingRecord = false; //the user is deleting a record
   userIsAddingAddress = false; //the user is adding an additional address to a record
 
+  //notification states
+  updateNotification = false;
+
   constructor(private _Service: CustomersService) { }
 
   //when this component is rendered, retrieve all records
   ngOnInit(): void {
     this.retrieve();
-    console.log(this.newCustomer);
+    //console.log(this.newCustomer);
   }
   
   //retrieve all records from Firebase
@@ -60,7 +63,7 @@ export class CustomersComponent implements OnInit {
       this.Customer = data.reverse(); 
       this.customerAmount = data.length;
     });
-    console.log(this.Customer);
+    //console.log(this.Customer);
   }
 
   //hide/show modal
@@ -103,8 +106,6 @@ export class CustomersComponent implements OnInit {
     for (let i = 0; i < addresses.length; i++) {
       this.viewingCustomer.addresses[i] = addresses[i];
     }
-    //show me the result
-    console.log(this.viewingCustomer);
     //open the modal
     this.toggleModal();
     //the user is now viewing a record
@@ -133,7 +134,7 @@ export class CustomersComponent implements OnInit {
       //append the new address to the address object
       this.newCustomer.addresses.push(this.newAddress);
       //give me some feedback on the console
-      console.log(this.newCustomer);
+      //console.log(this.newCustomer);
       //push the record to Firebase
       this._Service.addNewCustomer(this.newCustomer);
     } else { 
@@ -141,7 +142,7 @@ export class CustomersComponent implements OnInit {
       //push this address to the addresses array
       this.newCustomer.addresses.push(this.newAddress); 
       //give me feedback
-      console.log(this.newCustomer); 
+      //console.log(this.newCustomer); 
       //push the record to firebase
       this._Service.addNewCustomer(this.newCustomer); 
     }
@@ -154,13 +155,27 @@ export class CustomersComponent implements OnInit {
 
   //let's add an additional address
   addAdditionalAddress() {
+    //this helps us show the new address input field on the modal
     this.userIsAddingAddress = true;
   }
-
+  //update the record on firebase
   saveRecordWithNewAddress() {
+    //push the new address into the virtual 'viewingCustomer' object
     this.viewingCustomer.addresses.push(this.newAddress);
-    console.log(this.viewingCustomer);
+    //update the record on Firebase
     this._Service.updateRecord(this.viewingCustomer.key, this.viewingCustomer);
+    //close the modal once all is done
     this.toggleModal();
+    //show a 'success' notification
+    this.showSuccess();
+  }
+  //show a success notification
+  showSuccess() {
+    this.updateNotification = true;
+    console.log('Record has been saved');
+    setTimeout(() => {
+      this.updateNotification = false;
+    }, 3000
+    );
   }
 }

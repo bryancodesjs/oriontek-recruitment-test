@@ -147,3 +147,15 @@ tr:hover {
     color: $primary-color;
     cursor: pointer;
 }
+.notification {
+    width: fit-content;
+    animation-duration: 0.2s;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    &.success {
+        background-color: #d0ecdb;
+        border-left: 3px solid #a8e2ae;
+        color: green;
+    }
+}
