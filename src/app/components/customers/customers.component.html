@@ -41,9 +41,11 @@
     <div class="modal-dialog animate__animated animate__fadeIn">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="mainModalLabel" *ngIf="userIsAddingRecord">New Customer</h5>
-          <h5 class="modal-title" id="mainModalLabel" *ngIf="userIsViewingRecord">{{viewingCustomer.name}}</h5>
-          <button (click)="toggleModal()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <!-- if the user is adding a new record, show this title-->
+            <h5 class="modal-title" id="mainModalLabel" *ngIf="userIsAddingRecord">New Customer</h5>
+            <!-- if the user is viewing a record, show the name on the record-->
+            <h5 class="modal-title" id="mainModalLabel" *ngIf="userIsViewingRecord"><i class="ri-user-6-fill"></i> {{viewingCustomer.name}}</h5>
+            <button (click)="toggleModal()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             <!-- if the user is adding a new record, show this form-->
@@ -72,13 +74,24 @@
                     <label for="">Service Locations</label>
                     <ul>
                         <li *ngFor="let a of viewingCustomer.addresses">{{a}}</li>
+                        <label *ngIf="!userIsAddingAddress" (click)="addAdditionalAddress()" class="mt-4 add-address-btn"><a>Add new service location +</a></label>
                     </ul>
+                    <div class="form-group mb-3" *ngIf="userIsAddingAddress">
+                        <label for="">New Service Location</label>
+                        <input [(ngModel)]="newAddress" type="text" class="form-control">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="modal-footer">
+        <!-- if the user is adding a new record, show this buttons-->
+        <div class="modal-footer" *ngIf="userIsAddingRecord">
           <button (click)="toggleModal()" type="button" class="btn secondary-btn" data-bs-dismiss="modal">Discard</button>
           <button (click)="save()" type="button" class="btn action-btn">Submit</button>
+        </div>
+        <!-- if the user is adding a new address to an existing record, show this buttons -->
+        <div class="modal-footer" *ngIf="userIsAddingAddress">
+            <button (click)="toggleModal()" type="button" class="btn secondary-btn" data-bs-dismiss="modal">Discard</button>
+            <button (click)="saveRecordWithNewAddress()" type="button" class="btn action-btn">Save Changes</button>
         </div>
       </div>
     </div>

@@ -1,0 +1,288 @@
+{
+    "extension": "linecounter",
+    "version": "0.2.7",
+    "workspace": "c:\\Users\\PC\\Documents\\GitHub\\oriontek-recruitment-test",
+    "linecount": [
+        {
+            "version": "0.2.7",
+            "counttime": "2022-01-16 13:36:45",
+            "filesum": 38,
+            "codesum": 13543,
+            "commentsum": 176,
+            "blanksum": 83,
+            "statistics": {
+                ".json": {
+                    "code": 12835,
+                    "comment": 3,
+                    "blank": 11
+                },
+                ".scss": {
+                    "code": 150,
+                    "comment": 6,
+                    "blank": 1
+                },
+                ".html": {
+                    "code": 160,
+                    "comment": 13,
+                    "blank": 5
+                },
+                ".md": {
+                    "code": 8,
+                    "comment": 0,
+                    "blank": 5
+                },
+                ".ts": {
+                    "code": 301,
+                    "comment": 122,
+                    "blank": 49
+                },
+                "": {
+                    "code": 48,
+                    "comment": 24,
+                    "blank": 11
+                },
+                ".svg": {
+                    "code": 4,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".js": {
+                    "code": 37,
+                    "comment": 8,
+                    "blank": 1
+                }
+            },
+            "filelist": [
+                {
+                    "blank": 3,
+                    "code": 14,
+                    "comment": 2,
+                    "filename": ".browserslistrc"
+                },
+                {
+                    "blank": 3,
+                    "code": 13,
+                    "comment": 1,
+                    "filename": ".editorconfig"
+                },
+                {
+                    "blank": 5,
+                    "code": 21,
+                    "comment": 21,
+                    "filename": ".gitignore"
+                },
+                {
+                    "blank": 5,
+                    "code": 110,
+                    "comment": 0,
+                    "filename": "angular.json"
+                },
+                {
+                    "blank": 1,
+                    "code": 37,
+                    "comment": 8,
+                    "filename": "karma.conf.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 12628,
+                    "comment": 0,
+                    "filename": "package-lock.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 43,
+                    "comment": 0,
+                    "filename": "package.json"
+                },
+                {
+                    "blank": 5,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "README.md"
+                },
+                {
+                    "blank": 2,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\app-routing.module.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 55,
+                    "comment": 2,
+                    "filename": "src\\app\\app.component.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\app.component.scss"
+                },
+                {
+                    "blank": 4,
+                    "code": 31,
+                    "comment": 0,
+                    "filename": "src\\app\\app.component.spec.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "src\\app\\app.component.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 27,
+                    "comment": 1,
+                    "filename": "src\\app\\app.module.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 85,
+                    "comment": 9,
+                    "filename": "src\\app\\components\\customers\\customers.component.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "src\\app\\components\\customers\\customers.component.scss"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\components\\customers\\customers.component.spec.ts"
+                },
+                {
+                    "blank": 12,
+                    "code": 109,
+                    "comment": 42,
+                    "filename": "src\\app\\components\\customers\\customers.component.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "src\\app\\models\\customer.model.spec.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "src\\app\\models\\customer.model.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "src\\app\\services\\customers.service.spec.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 27,
+                    "comment": 6,
+                    "filename": "src\\app\\services\\customers.service.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\assets\\.gitkeep"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\assets\\icons\\inbox.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\assets\\icons\\plans.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\assets\\icons\\settings.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\assets\\icons\\users.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\environments\\environment.prod.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 11,
+                    "comment": 11,
+                    "filename": "src\\environments\\environment.ts"
+                },
+                {
+                    "filename": "src\\favicon.ico",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 20,
+                    "comment": 2,
+                    "filename": "src\\index.html"
+                },
+                {
+                    "blank": 3,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "src\\main.ts"
+                },
+                {
+                    "blank": 7,
+                    "code": 1,
+                    "comment": 58,
+                    "filename": "src\\polyfills.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 142,
+                    "comment": 6,
+                    "filename": "src\\styles.scss"
+                },
+                {
+                    "blank": 4,
+                    "code": 19,
+                    "comment": 4,
+                    "filename": "src\\test.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 12,
+                    "comment": 1,
+                    "filename": "tsconfig.app.json"
+                },
+                {
+                    "blank": 1,
+                    "code": 28,
+                    "comment": 1,
+                    "filename": "tsconfig.json"
+                },
+                {
+                    "blank": 3,
+                    "code": 14,
+                    "comment": 1,
+                    "filename": "tsconfig.spec.json"
+                }
+            ]
+        }
+    ]
+}

@@ -105,7 +105,9 @@ export class CustomersComponent implements OnInit {
     }
     //show me the result
     console.log(this.viewingCustomer);
+    //open the modal
     this.toggleModal();
+    //the user is now viewing a record
     this.userIsViewingRecord = true;
   }
   //reset all modal states to false;
@@ -150,4 +152,15 @@ export class CustomersComponent implements OnInit {
     this._Service.delete(key);
   }
 
+  //let's add an additional address
+  addAdditionalAddress() {
+    this.userIsAddingAddress = true;
+  }
+
+  saveRecordWithNewAddress() {
+    this.viewingCustomer.addresses.push(this.newAddress);
+    console.log(this.viewingCustomer);
+    this._Service.updateRecord(this.viewingCustomer.key, this.viewingCustomer);
+    this.toggleModal();
+  }
 }

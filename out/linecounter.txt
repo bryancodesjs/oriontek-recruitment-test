@@ -1,0 +1,62 @@
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2022-01-16 13:36:45
+count workspace : c:\Users\PC\Documents\GitHub\oriontek-recruitment-test
+total files : 38
+total code lines : 13543
+total comment lines : 176
+total blank lines : 83
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |          .json|          12835|              3|             11|     95|
+   |          .scss|            150|              6|              1|    1.1|
+   |          .html|            160|             13|              5|    1.2|
+   |            .md|              8|              0|              5|  0.059|
+   |            .ts|            301|            122|             49|    2.2|
+   |               |             48|             24|             11|   0.35|
+   |           .svg|              4|              0|              0|  0.030|
+   |            .js|             37|              8|              1|   0.27|
+   -------------------------------------------------------------------------
+.browserslistrc, code is 14, comment is 2, blank is 3.
+.editorconfig, code is 13, comment is 1, blank is 3.
+.gitignore, code is 21, comment is 21, blank is 5.
+angular.json, code is 110, comment is 0, blank is 5.
+karma.conf.js, code is 37, comment is 8, blank is 1.
+package-lock.json, code is 12628, comment is 0, blank is 0.
+package.json, code is 43, comment is 0, blank is 0.
+README.md, code is 8, comment is 0, blank is 5.
+src\app\app-routing.module.ts, code is 11, comment is 0, blank is 2.
+src\app\app.component.html, code is 55, comment is 2, blank is 1.
+src\app\app.component.scss, code is 0, comment is 0, blank is 0.
+src\app\app.component.spec.ts, code is 31, comment is 0, blank is 4.
+src\app\app.component.ts, code is 9, comment is 0, blank is 1.
+src\app\app.module.ts, code is 27, comment is 1, blank is 1.
+src\app\components\customers\customers.component.html, code is 85, comment is 9, blank is 4.
+src\app\components\customers\customers.component.scss, code is 8, comment is 0, blank is 0.
+src\app\components\customers\customers.component.spec.ts, code is 20, comment is 0, blank is 5.
+src\app\components\customers\customers.component.ts, code is 109, comment is 42, blank is 12.
+src\app\models\customer.model.spec.ts, code is 6, comment is 0, blank is 1.
+src\app\models\customer.model.ts, code is 6, comment is 0, blank is 0.
+src\app\services\customers.service.spec.ts, code is 12, comment is 0, blank is 4.
+src\app\services\customers.service.ts, code is 27, comment is 6, blank is 3.
+src\assets\.gitkeep, code is 0, comment is 0, blank is 0.
+src\assets\icons\inbox.svg, code is 1, comment is 0, blank is 0.
+src\assets\icons\plans.svg, code is 1, comment is 0, blank is 0.
+src\assets\icons\settings.svg, code is 1, comment is 0, blank is 0.
+src\assets\icons\users.svg, code is 1, comment is 0, blank is 0.
+src\environments\environment.prod.ts, code is 3, comment is 0, blank is 0.
+src\environments\environment.ts, code is 11, comment is 11, blank is 2.
+src\favicon.ico, it is a binary file.
+src\index.html, code is 20, comment is 2, blank is 0.
+src\main.ts, code is 9, comment is 0, blank is 3.
+src\polyfills.ts, code is 1, comment is 58, blank is 7.
+src\styles.scss, code is 142, comment is 6, blank is 1.
+src\test.ts, code is 19, comment is 4, blank is 4.
+tsconfig.app.json, code is 12, comment is 1, blank is 2.
+tsconfig.json, code is 28, comment is 1, blank is 1.
+tsconfig.spec.json, code is 14, comment is 1, blank is 3.
+===============================================================================
