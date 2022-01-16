@@ -29,14 +29,16 @@
                     <li *ngFor="let cust of customer.addresses">{{cust}}</li>
                 </ul>
             </td>
-            <td><button (click)="deleteRecord(customer.key)">Delete</button></td>
+            <td>
+                <button (click)="deleteRecord(customer.key)" class="btn btn-small btn-transparent">Delete</button>
+            </td>
         </tr>
     </tbody>
 </table>
 
 <!-- Modal -->
 <div class="modal fade show d-block" id="mainModal" tabindex="-1" aria-labelledby="mainModal" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog animate__animated animate__fadeIn">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="mainModalLabel">New Customer</h5>

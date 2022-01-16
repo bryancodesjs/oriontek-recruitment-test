@@ -12,20 +12,20 @@ import { Customer } from 'src/app/models/customer.model';
 })
 export class CustomersComponent implements OnInit {
   title = 'customers'
+
   //call and initialize the customer model
   Customer?: Customer[];
 
+  //create a blank customer array in memory 
   newCustomer = {
     name: '',
     phone: 0,
     addresses: ['']
   }
-  customerAmount = 0;
-  //create a blank customer in memory using this variables
-  newName = '';
-  newPhone = 0;
+  //variable to store a single address temporarily
   newAddress = '';
-  newAddresses:any = [];
+  //variable to store the amount of records being retrieved from Firebase
+  customerAmount = 0;
 
   constructor(private _Service: CustomersService) { }
 
@@ -34,34 +34,6 @@ export class CustomersComponent implements OnInit {
     this.retrieve();
     console.log(this.newCustomer);
   }
-  //dummy customers list
-  customers = [
-    {
-      name: 'bryan',
-      phone: '8092201111',
-      addresses: [
-        "Madion St, 14",
-        "Dan St, 14",
-        "Calle arturo cirujano #45, piantini",
-      ]
-    },
-    {
-      name: 'Emely',
-      phone: '8092201111',
-      addresses: [
-        "Madion St, 14",
-        "Dan St, 14"
-      ]
-    },
-    {
-      name: 'Francis',
-      phone: '8092201111',
-      addresses: [
-        "Calle Gaspar Polanco #46, Bella Vista",
-        "Dan St, 14"
-      ]
-    },
-  ]
   
   //retrieve all records from Firebase
   retrieve():void {
@@ -83,12 +55,16 @@ export class CustomersComponent implements OnInit {
     if((document.getElementById('mainModal')as HTMLElement).className == "modal fade") {
       //clear all previous values in memory, in case another customer had been added recently
       this.resetValues();
+      //show me the modal
       (document.getElementById('mainModal')as HTMLElement).className = "modal fade show d-block";
+      //in case the modal is already showing then...
     } else {
+      //hide it
       (document.getElementById('mainModal')as HTMLElement).className = "modal fade";
     }
   }
-  //this function clears all values in the newCustomer object in memory
+
+  //this function clears all values in the newCustomer array in memory
   resetValues() {
     this.newCustomer.name = '';
     this.newCustomer.phone = 0;
@@ -119,7 +95,7 @@ export class CustomersComponent implements OnInit {
     }
   }
 
-  //delete the customer whose key is being passed to the function
+  //delete the customer record whose key is being passed to the function
   deleteRecord(key: any) {
     this._Service.delete(key);
   }
